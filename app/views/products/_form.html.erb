@@ -1,0 +1,30 @@
+<%= form_with model: product do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :old_price %><br>
+    <%= form.number_field :old_price %>
+  </div>
+
+  <div>
+    <%= form.label :new_price %><br>
+    <%= form.number_field :new_price %>
+  </div>
+
+  <div>
+    <%= form.label :category_id%><br>
+    <%= form.collection_select :category_id, categories, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :photo %><br>
+    <%= form.file_field :photo, class: "photo_upload" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

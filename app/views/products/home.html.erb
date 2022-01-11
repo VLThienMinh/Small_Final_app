@@ -1,0 +1,14 @@
+<div class="row d-flex justify-content-between align-items-center">
+  <% @products.each do |product| %>
+    <div class="card" style="width: 11rem;">
+      <%= image_tag "#{product.photo}", class: "card-img-top", alt: "product-photo" %>
+      
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <h6 class="card-subtitle mb-2"><%= product.new_price %></h6>
+        <div><del class="text-muted"><%= product.old_price %></del></div>
+        <%= link_to product.category.name, category_path(product.category) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<h1><%= @category.name %></h1>
+<%= link_to I18n.t(".edit"), edit_category_path(@category) %>
+<%= link_to I18n.t(".delete"), category_path(@category), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="row d-flex justify-content-between align-items-center">
+  <% @products.each do |product| %>
+    <div class="card" style="width: 13rem;">
+      <%= image_tag "#{product.photo}", class: "card-img-top", alt: "product-photo" %>
+      
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <h6 class="card-subtitle mb-2"><%= product.new_price %></h6>
+        <div><del class="text-muted"><%= product.old_price %></del></div>
+        <% if current_user && current_user.is_admin == true %>
+          <%= link_to I18n.t(".edit"), edit_product_path(product) %>
+          <%= link_to(I18n.t(".delete"), product_path(product), method: :delete, data: { confirm: "Are you sure?" }) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= paginate @products, theme: 'twitter-bootstrap-3' %>

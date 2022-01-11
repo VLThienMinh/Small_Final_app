@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <%= link_to "Final App", root_path, class: "navbar-brand col-md-2" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex col-lg-5">
+        <input class="form-control me-2" type="search" placeholder="Input keyword" aria-label="Search">
+        <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      
+      <ul class="navbar-nav ">
+        <li>
+          <%= link_to "English", locale:"en" %>
+        </li>
+        <li>
+          <%= link_to "Vietnamese", locale:"vi" %>
+        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= current_user.name %>
+          </li>
+          <li>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+          </li> 
+        <% else %>
+          <li>
+            <%= link_to('Login', new_user_session_path) %>  
+          </li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</nav>

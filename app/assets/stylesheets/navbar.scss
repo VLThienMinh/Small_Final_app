@@ -1,0 +1,44 @@
+.navbar {
+	background-color: rgb(1,77,78);
+}
+
+.navbar-brand {
+  background-color: red;
+  // text-decoration: white;
+}
+
+.navbar-light .navbar-brand {
+  background-color: red;
+	font-weight: bold;
+  color: white !important;
+  text-align: end;
+}
+
+.navbar-collapse .btn {
+  background-color: red;
+  color: white;
+}
+
+// .fa-search {
+//   background-color: red;
+//   color: white;
+// }
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  padding-right: 10%;
+}
+
+.navbar-nav li {
+  padding: 0% 10%;
+  color: white;
+}
+
+.navbar-nav li a {
+  color: white;
+  white-space: nowrap;
+}

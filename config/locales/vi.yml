@@ -1,0 +1,6 @@
+vi:
+  login: "Đăng nhập" 
+  logout: "Đăng xuất"
+  signup: "Đăng ký"
+  edit: "Chỉnh sửa"
+  delete: "Xóa"
